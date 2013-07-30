@@ -23,6 +23,25 @@ class CommentsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    if @comment.update_attributes(params[:comment])
+      flash[:notice] = "Comment has been updated."
+      redirect_to [@post, @comment]
+    else
+      flash[:alert] = "Comment has not been updated."
+      render :action => "edit"
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    flash[:notice] = "Comment has been deleted."
+    redirect_to posts_path
+  end
 
   private
 

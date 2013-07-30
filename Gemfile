@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'dynamic_form', '1.1.4'
 gem 'pry-debugger'
+gem 'rails-i18n', '~> 3.0.0.pre'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
