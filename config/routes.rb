@@ -1,11 +1,11 @@
 TravelInsight::Application.routes.draw do
 root :to => "posts#index"
-#match '/:locale' =>'posts#index'
-#scope "/:locale", :locale =>/en|es/ do
-  resources :posts do
-    resources :comments
+#scope ':locale' do
+  resources :posts do #:only => [ :index ]
+    resources :comments #:only => [ :index, :show, :edit, :update ]
   end
 #end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
