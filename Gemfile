@@ -8,6 +8,9 @@ gem 'rails-i18n', '~> 3.0.0.pre'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 
 # Gems used only for assets and not required

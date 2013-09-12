@@ -4,6 +4,11 @@ root :to => "posts#index"
   resources :posts do #:only => [ :index ]
     resources :comments #:only => [ :index, :show, :edit, :update ]
   end
+
+  match 'auth/:twitter/callback' => 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+
 #end
 
   # The priority is based upon order of creation:
@@ -63,3 +68,4 @@ root :to => "posts#index"
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+
